@@ -1,12 +1,8 @@
-//
-//  History.swift
-//  Scrumdinger
-//
-//  Created by James Mac on 05/08/2023.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import Foundation
-
 
 struct History: Identifiable {
     let id: UUID
@@ -19,4 +15,3 @@ struct History: Identifiable {
         self.attendees = attendees
     }
 }
-
