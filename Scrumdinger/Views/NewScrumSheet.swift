@@ -1,9 +1,6 @@
-//
-//  NewScrumSheet.swift
-//  Scrumdinger
-//
-//  Created by James Mac on 05/08/2023.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -11,7 +8,7 @@ struct NewScrumSheet: View {
     @State private var newScrum = DailyScrum.emptyScrum
     @Binding var scrums: [DailyScrum]
     @Binding var isPresentingNewScrumView: Bool
-
+    
     var body: some View {
         NavigationStack {
             DetailEditView(scrum: $newScrum)
@@ -34,7 +31,6 @@ struct NewScrumSheet: View {
 
 struct NewScrumSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewScrumSheet(scrums: .constant(DailyScrum.sampleData),
-                      isPresentingNewScrumView: .constant(true))
+        NewScrumSheet(scrums: .constant(DailyScrum.sampleData), isPresentingNewScrumView: .constant(true))
     }
 }

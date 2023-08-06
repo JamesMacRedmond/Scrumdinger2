@@ -1,15 +1,13 @@
-//
-//  MeetingFooterView.swift
-//  Scrumdinger
-//
-//  Created by James Mac on 05/08/2023.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
 
 struct MeetingFooterView: View {
     let speakers: [ScrumTimer.Speaker]
     var skipAction: ()->Void
+    
     private var speakerNumber: Int? {
         guard let index = speakers.firstIndex(where: { !$0.isCompleted }) else { return nil }
         return index + 1
@@ -21,7 +19,7 @@ struct MeetingFooterView: View {
         guard let speakerNumber = speakerNumber else { return "No more speakers" }
         return "Speaker \(speakerNumber) of \(speakers.count)"
     }
-
+    
     var body: some View {
         VStack {
             HStack {

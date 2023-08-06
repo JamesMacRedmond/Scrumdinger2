@@ -5,7 +5,6 @@
 import SwiftUI
 import AVFoundation
 
-
 struct MeetingView: View {
     @Binding var scrum: DailyScrum
     @StateObject var scrumTimer = ScrumTimer()
@@ -50,10 +49,8 @@ struct MeetingView: View {
     }
 }
 
-
 struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
         MeetingView(scrum: .constant(DailyScrum.sampleData[0]))
     }
 }
-
