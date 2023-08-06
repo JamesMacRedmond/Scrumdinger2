@@ -1,12 +1,9 @@
-//
-//  MeetingHeaderView.swift
-//  Scrumdinger
-//
-//  Created by James Mac on 05/08/2023.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
-    
+
 struct MeetingHeaderView: View {
     let secondsElapsed: Int
     let secondsRemaining: Int
@@ -22,7 +19,7 @@ struct MeetingHeaderView: View {
     private var minutesRemaining: Int {
         secondsRemaining / 60
     }
-
+    
     var body: some View {
         VStack {
             ProgressView(value: progress)
@@ -31,13 +28,13 @@ struct MeetingHeaderView: View {
                 VStack(alignment: .leading) {
                     Text("Seconds Elapsed")
                         .font(.caption)
-                    Label("\(secondsElapsed)", systemImage: "hourglass.bottomhalf.fill")
+                    Label("\(secondsElapsed)", systemImage: "hourglass.tophalf.fill")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Seconds Remaining")
                         .font(.caption)
-                    Label("\(secondsRemaining)", systemImage: "hourglass.tophalf.fill")
+                    Label("\(secondsRemaining)", systemImage: "hourglass.bottomhalf.fill")
                         .labelStyle(.trailingIcon)
                 }
             }
@@ -46,15 +43,12 @@ struct MeetingHeaderView: View {
         .accessibilityLabel("Time remaining")
         .accessibilityValue("\(minutesRemaining) minutes")
         .padding([.top, .horizontal])
-
     }
 }
 
-    
 struct MeetingHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         MeetingHeaderView(secondsElapsed: 60, secondsRemaining: 180, theme: .bubblegum)
             .previewLayout(.sizeThatFits)
     }
 }
-
